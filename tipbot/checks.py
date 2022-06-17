@@ -41,7 +41,7 @@ def username_is_valid(username):
 def check_address(update, address):
     """
     Checks if a BCH address is correct
-    It also prepends 'bitcoincash:' prefix if missing
+    It also prepends 'ltc' prefix if missing
 
     Returns the BCH address if correct, False otherwise
     """
@@ -49,6 +49,6 @@ def check_address(update, address):
         message = f"{address} is not a valid Bitcoin Cash address."
         update.message.reply_text(message)
         return False
-    if "bitcoincash:" not in address:
-        address = "bitcoincash:" + address
+    if "ltc" not in address:
+        address = "ltc" + address
     return address
