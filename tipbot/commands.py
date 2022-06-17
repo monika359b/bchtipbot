@@ -38,8 +38,8 @@ def deposit(bot, update):
         )
 
     create_user(update.message.from_user.username)  # check if user is created
- w = Wallet.create('Wallet1')
-key1 = w.get_key()
+    w = Wallet.create('Wallet1')
+    key1 = w.get_key()
     address = get_address(update.message.from_user.username)
     update.message.reply_text("Send Bitcoin Cash to:")
     return update.message.reply_html("<b>{}</b>".format(key1))
